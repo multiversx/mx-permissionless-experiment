@@ -1,0 +1,8 @@
+/home/alin/code/multiversx/mx-permissionless-experiment/adder/target/debug/deps/liblog-a05a9a2ae4eca409.rmeta: /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/lib.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/macros.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/serde.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/__private_api.rs
+
+/home/alin/code/multiversx/mx-permissionless-experiment/adder/target/debug/deps/log-a05a9a2ae4eca409.d: /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/lib.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/macros.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/serde.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/__private_api.rs
+
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/lib.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/macros.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/serde.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.26/src/__private_api.rs:

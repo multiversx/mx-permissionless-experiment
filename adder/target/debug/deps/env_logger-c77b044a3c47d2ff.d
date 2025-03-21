@@ -1,0 +1,11 @@
+/home/alin/code/multiversx/mx-permissionless-experiment/adder/target/debug/deps/libenv_logger-c77b044a3c47d2ff.rmeta: /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/lib.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/logger.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/mod.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/humantime.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/mod.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/buffer.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/target.rs
+
+/home/alin/code/multiversx/mx-permissionless-experiment/adder/target/debug/deps/env_logger-c77b044a3c47d2ff.d: /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/lib.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/logger.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/mod.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/humantime.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/mod.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/buffer.rs /home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/target.rs
+
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/lib.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/logger.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/mod.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/humantime.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/mod.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/buffer.rs:
+/home/alin/.cargo/registry/src/index.crates.io-6f17d22bba15001f/env_logger-0.11.6/src/fmt/writer/target.rs:

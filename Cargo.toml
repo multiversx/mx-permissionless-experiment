@@ -1,0 +1,12 @@
+[workspace]
+resolver = "2"
+
+members = [
+    "adder",
+    "adder/meta",
+    "adder/interactor",
+    "registry-sc",
+    "registry-sc/meta",
+    "social-registry-contract",
+    "socialregistry-contract/meta",
+]
