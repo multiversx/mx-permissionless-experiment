@@ -8,5 +8,5 @@ members = [
     "registry-sc",
     "registry-sc/meta",
     "social-registry-contract",
-    "socialregistry-contract/meta",
+    "social-registry-contract/meta",
 ]
