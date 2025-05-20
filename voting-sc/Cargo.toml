@@ -1,12 +1,12 @@
 [package]
-name = "social-registry-contract"
+name = "voting-sc"
 version = "0.0.0"
 publish = false
 edition = "2021"
 authors = ["you"]
 
 [lib]
-path = "src/social_registry_contract.rs"
+path = "src/voting_sc.rs"
 
 [dependencies.multiversx-sc]
 version = "0.57.1"
@@ -16,3 +16,9 @@ num-bigint = "0.4"
 
 [dev-dependencies.multiversx-sc-scenario]
 version = "0.57.1"
+
+[workspace]
+members = [
+    ".",
+    "meta",
+]
