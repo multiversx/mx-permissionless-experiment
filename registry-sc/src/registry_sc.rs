@@ -16,7 +16,9 @@ pub trait RegistrySc:
     register::RegisterModule + submit_specs::SubmitSpecsModule + storage::StorageModule
 {
     #[init]
-    fn init(&self) {}
+    fn init(&self, src: ManagedAddress) {
+        self.social_registry_contract().set(src);
+    }
 
     #[upgrade]
     fn upgrade(&self) {}

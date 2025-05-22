@@ -41,4 +41,7 @@ pub trait StorageModule {
     #[view]
     #[storage_mapper("msInterfaceSpec")]
     fn ms_interface_spec(&self, ms: MicroService) -> SingleValueMapper<MsSpecs<Self::Api>>;
+
+    #[storage_mapper("socialRegistryContract")]
+    fn social_registry_contract(&self) -> SingleValueMapper<ManagedAddress>;
 }

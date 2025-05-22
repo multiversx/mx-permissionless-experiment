@@ -2,14 +2,20 @@
 
 #[allow(unused_imports)]
 use multiversx_sc::imports::*;
+mod register;
+mod score;
 mod storage;
 
 #[multiversx_sc::contract]
-pub trait SocialRegistryContract: storage::StorageModule {
+pub trait SocialRegistryContract:
+    storage::StorageModule
+    + score::ScoreModule
+    + register::RegisterModule
+    + multiversx_sc_modules::pause::PauseModule
+{
     #[init]
-    fn init(&self, registry_sc: ManagedAddress, voting_sc: ManagedAddress) {
-        self.registry_sc().set(registry_sc);
-        self.voting_sc().set(voting_sc);
+    fn init(&self) {
+        self.set_paused(true);
     }
 
     #[upgrade]
