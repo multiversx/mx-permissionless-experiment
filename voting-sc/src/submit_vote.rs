@@ -26,10 +26,8 @@ pub trait SubmitVoteModule: storage::StorageModule {
             fe: Option::Some(fe),
         };
         require!(
-            self.address_registrations(&caller)
-                .iter()
-                .find(|registration| *registration == new_registration)
-                .is_none(),
+            !self.address_registrations(&caller)
+                .iter().any(|registration| registration == new_registration),
             "unable to vote now"
         );
         self.address_registration_timestamps(&caller)
@@ -50,10 +48,8 @@ pub trait SubmitVoteModule: storage::StorageModule {
             fe: Option::None,
         };
         require!(
-            self.address_registrations(&caller)
-                .iter()
-                .find(|registration| *registration == new_registration)
-                .is_none(),
+            !self.address_registrations(&caller)
+                .iter().any(|registration| registration == new_registration),
             "unable to vote now"
         );
         self.address_registration_timestamps(&caller)
@@ -74,10 +70,8 @@ pub trait SubmitVoteModule: storage::StorageModule {
             fe: Option::Some(fe),
         };
         require!(
-            self.address_registrations(&caller)
-                .iter()
-                .find(|registration| *registration == new_registration)
-                .is_none(),
+            !self.address_registrations(&caller)
+                .iter().any(|registration| registration == new_registration),
             "unable to vote now"
         );
         self.address_registration_timestamps(&caller)
@@ -88,7 +82,7 @@ pub trait SubmitVoteModule: storage::StorageModule {
 
     fn check_caller_is_allowed_to_vote_now(&self, caller: &ManagedAddress, current_timestamp: u64) {
         let allowed_nr_reg_per_epoch = self.allowed_nr_reg_per_epoch().get();
-        if self.address_registration_timestamps(&caller).len() == allowed_nr_reg_per_epoch {
+        if self.address_registration_timestamps(caller).len() == allowed_nr_reg_per_epoch {
             let _ = self.try_pop_last_if_expired(caller, current_timestamp, true);
         }
         loop {
@@ -107,17 +101,15 @@ pub trait SubmitVoteModule: storage::StorageModule {
         check_allowed_to_vote: bool,
     ) -> bool {
         let last_timestamp = self
-            .address_registration_timestamps(&address)
+            .address_registration_timestamps(address)
             .back()
             .unwrap();
         if last_timestamp < current_timestamp - ONE_EPOCH {
-            self.address_registration_timestamps(&address).pop_back();
-            self.address_registrations(&address).pop_back();
+            self.address_registration_timestamps(address).pop_back();
+            self.address_registrations(address).pop_back();
             return true;
-        } else {
-            if check_allowed_to_vote {
-                panic!("unable to vote yet");
-            }
+        } else if check_allowed_to_vote {
+            panic!("unable to vote yet");
         }
         false
     }
