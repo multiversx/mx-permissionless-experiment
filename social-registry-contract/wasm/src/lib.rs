@@ -6,9 +6,9 @@
 
 // Init:                                 1
 // Upgrade:                              1
-// Endpoints:                            0
+// Endpoints:                           15
 // Async Callback (empty):               1
-// Total number of exported functions:   3
+// Total number of exported functions:  18
 
 #![no_std]
 
@@ -20,6 +20,21 @@ multiversx_sc_wasm_adapter::endpoints! {
     (
         init => init
         upgrade => upgrade
+        fe_to_sc_pair_stats => fe_to_sc_pair_stats
+        ms_to_sc_pair_stats => ms_to_sc_pair_stats
+        fe_to_ms_pair_stats => fe_to_ms_pair_stats
+        fe_to_sc_pair_data => fe_to_sc_pair_data
+        ms_to_sc_pair_data => ms_to_sc_pair_data
+        fe_to_ms_pair_data => fe_to_ms_pair_data
+        receive_fe_to_sc_vote => receive_fe_to_sc_vote
+        receive_ms_to_sc_vote => receive_ms_to_sc_vote
+        receive_fe_to_ms_vote => receive_fe_to_ms_vote
+        receive_fe_to_sc_pair => receive_fe_to_sc_pair
+        receive_ms_to_sc_pair => receive_ms_to_sc_pair
+        receive_fe_to_ms_pair => receive_fe_to_ms_pair
+        pause => pause_endpoint
+        unpause => unpause_endpoint
+        isPaused => paused_status
     )
 }
 
