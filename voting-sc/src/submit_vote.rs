@@ -26,8 +26,10 @@ pub trait SubmitVoteModule: storage::StorageModule {
             fe: Option::Some(fe),
         };
         require!(
-            !self.address_registrations(&caller)
-                .iter().any(|registration| registration == new_registration),
+            !self
+                .address_registrations(&caller)
+                .iter()
+                .any(|registration| registration == new_registration),
             "unable to vote now"
         );
         self.address_registration_timestamps(&caller)
@@ -48,8 +50,10 @@ pub trait SubmitVoteModule: storage::StorageModule {
             fe: Option::None,
         };
         require!(
-            !self.address_registrations(&caller)
-                .iter().any(|registration| registration == new_registration),
+            !self
+                .address_registrations(&caller)
+                .iter()
+                .any(|registration| registration == new_registration),
             "unable to vote now"
         );
         self.address_registration_timestamps(&caller)
@@ -70,8 +74,10 @@ pub trait SubmitVoteModule: storage::StorageModule {
             fe: Option::Some(fe),
         };
         require!(
-            !self.address_registrations(&caller)
-                .iter().any(|registration| registration == new_registration),
+            !self
+                .address_registrations(&caller)
+                .iter()
+                .any(|registration| registration == new_registration),
             "unable to vote now"
         );
         self.address_registration_timestamps(&caller)
