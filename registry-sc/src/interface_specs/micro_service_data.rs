@@ -1,7 +1,7 @@
 use multiversx_sc::derive_imports::*;
 use multiversx_sc::imports::*;
 
-pub type MicroService = H256;
+pub type MicroService<M> = ManagedBuffer<M>;
 
 #[type_abi]
 #[derive(
@@ -24,7 +24,7 @@ pub struct MsSpecs<M>
 where
     M: ManagedTypeApi,
 {
-    pub hash: H256,
+    pub hash: MicroService<M>,
     pub name: ManagedBuffer<M>,
     pub version: ManagedBuffer<M>,
     pub interfaces: ManagedVec<M, MsInterface<M>>,

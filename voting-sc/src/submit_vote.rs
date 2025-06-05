@@ -2,8 +2,8 @@ use core::panic;
 
 use multiversx_sc::imports::*;
 
-pub type MicroService = H256;
-pub type FrontEnd = H256;
+pub type MicroService<M> = ManagedBuffer<M>;
+pub type FrontEnd<M> = ManagedBuffer<M>;
 
 use crate::{
     storage::{self},
@@ -16,7 +16,7 @@ const ONE_EPOCH: u64 = 24 * 60 * 60; // one epoch is 1 day
 pub trait SubmitVoteModule: storage::StorageModule {
     #[payable("EGLD")]
     #[endpoint]
-    fn vote_fe_to_sc_pair(&self, sc: ManagedAddress, fe: FrontEnd) {
+    fn vote_fe_to_sc_pair(&self, sc: ManagedAddress, fe: FrontEnd<Self::Api>) {
         let caller = self.blockchain().get_caller();
         let current_timestamp = self.blockchain().get_block_timestamp();
         self.check_caller_is_allowed_to_vote_now(&caller, current_timestamp);
@@ -40,7 +40,7 @@ pub trait SubmitVoteModule: storage::StorageModule {
 
     #[payable("EGLD")]
     #[endpoint]
-    fn vote_ms_to_sc_pair(&self, sc: ManagedAddress, ms: MicroService) {
+    fn vote_ms_to_sc_pair(&self, sc: ManagedAddress, ms: MicroService<Self::Api>) {
         let caller = self.blockchain().get_caller();
         let current_timestamp = self.blockchain().get_block_timestamp();
         self.check_caller_is_allowed_to_vote_now(&caller, current_timestamp);
@@ -64,7 +64,7 @@ pub trait SubmitVoteModule: storage::StorageModule {
 
     #[payable("EGLD")]
     #[endpoint]
-    fn vote_fe_to_ms_pair(&self, ms: MicroService, fe: FrontEnd) {
+    fn vote_fe_to_ms_pair(&self, ms: MicroService<Self::Api>, fe: FrontEnd<Self::Api>) {
         let caller = self.blockchain().get_caller();
         let current_timestamp = self.blockchain().get_block_timestamp();
         self.check_caller_is_allowed_to_vote_now(&caller, current_timestamp);

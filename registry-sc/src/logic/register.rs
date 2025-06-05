@@ -6,7 +6,7 @@ use multiversx_sc::imports::*;
 #[multiversx_sc::module]
 pub trait RegisterModule: storage::StorageModule {
     #[endpoint]
-    fn register_fe_to_sc(self, fe: FrontEnd, sc: ManagedAddress) {
+    fn register_fe_to_sc(self, fe: FrontEnd<Self::Api>, sc: ManagedAddress) {
         self.validate_sc(&sc);
         let caller = self.blockchain().get_caller();
         let pair_data = PairData {
@@ -19,7 +19,7 @@ pub trait RegisterModule: storage::StorageModule {
     }
 
     #[endpoint]
-    fn register_ms_to_sc(self, ms: MicroService, sc: ManagedAddress) {
+    fn register_ms_to_sc(self, ms: MicroService<Self::Api>, sc: ManagedAddress) {
         self.validate_sc(&sc);
         let caller = self.blockchain().get_caller();
         let pair_data = PairData {
@@ -32,7 +32,7 @@ pub trait RegisterModule: storage::StorageModule {
     }
 
     #[endpoint]
-    fn register_fe_to_ms(self, fe: FrontEnd, ms: MicroService) {
+    fn register_fe_to_ms(self, fe: FrontEnd<Self::Api>, ms: MicroService<Self::Api>) {
         let caller = self.blockchain().get_caller();
         let pair_data = PairData {
             caller,

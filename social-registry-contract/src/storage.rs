@@ -19,8 +19,8 @@ where
     pub compatibility: bool,
 }
 
-pub type MicroService = H256;
-pub type FrontEnd = H256;
+pub type MicroService<M> = ManagedBuffer<M>;
+pub type FrontEnd<M> = ManagedBuffer<M>;
 
 #[multiversx_sc::module]
 pub trait StorageModule {
@@ -35,7 +35,7 @@ pub trait StorageModule {
     fn fe_to_sc_pair_stats(
         &self,
         sc: &ManagedAddress,
-        fe: &FrontEnd,
+        fe: &FrontEnd<Self::Api>,
     ) -> SingleValueMapper<PairStats>;
 
     #[view]
@@ -43,20 +43,23 @@ pub trait StorageModule {
     fn ms_to_sc_pair_stats(
         &self,
         sc: &ManagedAddress,
-        ms: &MicroService,
+        ms: &MicroService<Self::Api>,
     ) -> SingleValueMapper<PairStats>;
 
     #[view]
     #[storage_mapper("FeToMsPairStats")]
-    fn fe_to_ms_pair_stats(&self, ms: &MicroService, fe: &FrontEnd)
-        -> SingleValueMapper<PairStats>;
+    fn fe_to_ms_pair_stats(
+        &self,
+        ms: &MicroService<Self::Api>,
+        fe: &FrontEnd<Self::Api>,
+    ) -> SingleValueMapper<PairStats>;
 
     #[view]
     #[storage_mapper("FeToScPairData")]
     fn fe_to_sc_pair_data(
         &self,
         sc: &ManagedAddress,
-        fe: &FrontEnd,
+        fe: &FrontEnd<Self::Api>,
     ) -> SingleValueMapper<PairData<Self::Api>>;
 
     #[view]
@@ -64,14 +67,14 @@ pub trait StorageModule {
     fn ms_to_sc_pair_data(
         &self,
         sc: &ManagedAddress,
-        ms: &MicroService,
+        ms: &MicroService<Self::Api>,
     ) -> SingleValueMapper<PairData<Self::Api>>;
 
     #[view]
     #[storage_mapper("FeToMsPairData")]
     fn fe_to_ms_pair_data(
         &self,
-        ms: &MicroService,
-        fe: &FrontEnd,
+        ms: &MicroService<Self::Api>,
+        fe: &FrontEnd<Self::Api>,
     ) -> SingleValueMapper<PairData<Self::Api>>;
 }

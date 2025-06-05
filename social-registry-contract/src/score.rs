@@ -8,7 +8,7 @@ pub trait ScoreModule: storage::StorageModule + multiversx_sc_modules::pause::Pa
     fn receive_fe_to_sc_vote(
         &self,
         sc: ManagedAddress,
-        fe: FrontEnd,
+        fe: FrontEnd<Self::Api>,
         up_score: u32,
         down_score: u32,
     ) {
@@ -29,7 +29,7 @@ pub trait ScoreModule: storage::StorageModule + multiversx_sc_modules::pause::Pa
     fn receive_ms_to_sc_vote(
         &self,
         sc: ManagedAddress,
-        ms: MicroService,
+        ms: MicroService<Self::Api>,
         up_score: u32,
         down_score: u32,
     ) {
@@ -49,8 +49,8 @@ pub trait ScoreModule: storage::StorageModule + multiversx_sc_modules::pause::Pa
     #[endpoint]
     fn receive_fe_to_ms_vote(
         &self,
-        ms: MicroService,
-        fe: FrontEnd,
+        ms: MicroService<Self::Api>,
+        fe: FrontEnd<Self::Api>,
         up_score: u32,
         down_score: u32,
     ) {

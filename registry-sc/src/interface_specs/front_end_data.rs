@@ -1,7 +1,7 @@
 use multiversx_sc::derive_imports::*;
 use multiversx_sc::imports::*;
 
-pub type FrontEnd = H256;
+pub type FrontEnd<M> = ManagedBuffer<M>;
 
 #[type_abi]
 #[derive(
@@ -35,7 +35,7 @@ pub struct FeSpecs<M>
 where
     M: ManagedTypeApi,
 {
-    pub hash: H256,
+    pub hash: FrontEnd<M>,
     pub name: ManagedBuffer<M>,
     pub version: ManagedBuffer<M>,
     pub interfaces: ManagedVec<M, FeInterface<M>>,

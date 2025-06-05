@@ -10,7 +10,7 @@ pub trait RegisterModule:
     fn receive_fe_to_sc_pair(
         &self,
         sc: ManagedAddress,
-        fe: FrontEnd,
+        fe: FrontEnd<Self::Api>,
         deployer: ManagedAddress,
         compatibility: bool,
     ) {
@@ -29,7 +29,7 @@ pub trait RegisterModule:
     fn receive_ms_to_sc_pair(
         &self,
         sc: ManagedAddress,
-        ms: MicroService,
+        ms: MicroService<Self::Api>,
         deployer: ManagedAddress,
         compatibility: bool,
     ) {
@@ -47,8 +47,8 @@ pub trait RegisterModule:
     #[endpoint]
     fn receive_fe_to_ms_pair(
         &self,
-        ms: MicroService,
-        fe: FrontEnd,
+        ms: MicroService<Self::Api>,
+        fe: FrontEnd<Self::Api>,
         deployer: ManagedAddress,
         compatibility: bool,
     ) {

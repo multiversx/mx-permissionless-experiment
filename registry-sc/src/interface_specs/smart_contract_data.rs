@@ -33,7 +33,7 @@ pub struct ScSpecs<M>
 where
     M: ManagedTypeApi,
 {
-    pub hash: H256,
+    pub hash: ManagedBuffer<M>,
     pub name: ManagedBuffer<M>,
     pub version: ManagedBuffer<M>,
     pub endpoints: ManagedVec<M, Endpoint<M>>,

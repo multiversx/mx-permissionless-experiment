@@ -1,8 +1,8 @@
 use multiversx_sc::derive_imports::*;
 use multiversx_sc::imports::*;
 
-pub type MicroService = H256;
-pub type FrontEnd = H256;
+pub type MicroService<M> = ManagedBuffer<M>;
+pub type FrontEnd<M> = ManagedBuffer<M>;
 pub type Timestamp = u64;
 
 #[type_abi]
@@ -12,8 +12,8 @@ where
     M: ManagedTypeApi,
 {
     pub sc: ManagedOption<M, ManagedAddress<M>>,
-    pub ms: Option<MicroService>,
-    pub fe: Option<FrontEnd>,
+    pub ms: Option<MicroService<M>>,
+    pub fe: Option<FrontEnd<M>>,
 }
 
 #[multiversx_sc::module]
