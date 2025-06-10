@@ -16,6 +16,17 @@ where
     pub fe: Option<FrontEnd<M>>,
 }
 
+#[type_abi]
+#[derive(TopEncode, TopDecode, NestedEncode, NestedDecode, Clone, PartialEq)]
+pub struct VotingFeeData<M>
+where
+    M: ManagedTypeApi,
+{
+    pub min_fee: BigUint<M>,
+    pub max_fee: BigUint<M>,
+    pub max_influence: u32, // the amount of community score is received at a maximum voting fee payment
+}
+
 #[multiversx_sc::module]
 pub trait StorageModule {
     #[storage_mapper("socialRegistryContract")]
@@ -32,4 +43,7 @@ pub trait StorageModule {
 
     #[storage_mapper("addressRegistration")]
     fn address_registration_timestamps(&self, address: &ManagedAddress) -> QueueMapper<Timestamp>;
+
+    #[storage_mapper("voting_fee_data")]
+    fn voting_fee_data(&self) -> SingleValueMapper<VotingFeeData<Self::Api>>;
 }

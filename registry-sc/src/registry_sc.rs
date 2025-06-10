@@ -3,6 +3,8 @@
 use logic::{register, submit_specs};
 use multiversx_sc::imports::*;
 
+pub mod src_proxy;
+
 mod interface_specs;
 mod logic;
 mod pair_data;

@@ -2,8 +2,10 @@
 
 #[allow(unused_imports)]
 use multiversx_sc::imports::*;
+use multiversx_sc_modules::pause;
 mod register;
 mod score;
+mod setup;
 mod storage;
 
 #[multiversx_sc::contract]
@@ -11,7 +13,8 @@ pub trait SocialRegistryContract:
     storage::StorageModule
     + score::ScoreModule
     + register::RegisterModule
-    + multiversx_sc_modules::pause::PauseModule
+    + pause::PauseModule
+    + setup::SetupModule
 {
     #[init]
     fn init(&self) {
