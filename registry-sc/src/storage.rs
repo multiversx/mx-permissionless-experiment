@@ -35,8 +35,8 @@ pub trait StorageModule {
     fn pair_data(
         &self,
         sc: ManagedOption<ManagedAddress<Self::Api>>,
-        ms: Option<MicroService<Self::Api>>,
-        fe: Option<FrontEnd<Self::Api>>,
+        ms: ManagedOption<MicroService<Self::Api>>,
+        fe: ManagedOption<FrontEnd<Self::Api>>,
     ) -> SingleValueMapper<PairData<Self::Api>>;
 
     #[view]

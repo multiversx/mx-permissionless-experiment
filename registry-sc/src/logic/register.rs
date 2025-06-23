@@ -14,8 +14,12 @@ pub trait RegisterModule: storage::StorageModule {
             compatibility: Compatibility::Unverified,
         };
         self.pairs_fe_to_sc(&sc).insert(fe.clone());
-        self.pair_data(ManagedOption::some(sc), Option::None, Option::Some(fe))
-            .set(pair_data);
+        self.pair_data(
+            ManagedOption::some(sc),
+            ManagedOption::none(),
+            ManagedOption::some(fe),
+        )
+        .set(pair_data);
     }
 
     #[endpoint]
@@ -27,8 +31,12 @@ pub trait RegisterModule: storage::StorageModule {
             compatibility: Compatibility::Unverified,
         };
         self.pairs_ms_to_sc(&sc).insert(ms.clone());
-        self.pair_data(ManagedOption::some(sc), Option::Some(ms), Option::None)
-            .set(pair_data);
+        self.pair_data(
+            ManagedOption::some(sc),
+            ManagedOption::some(ms),
+            ManagedOption::none(),
+        )
+        .set(pair_data);
     }
 
     #[endpoint]
@@ -39,8 +47,12 @@ pub trait RegisterModule: storage::StorageModule {
             compatibility: Compatibility::Unverified,
         };
         self.pairs_fe_to_ms(&ms).insert(fe.clone());
-        self.pair_data(ManagedOption::none(), Option::Some(ms), Option::Some(fe))
-            .set(pair_data);
+        self.pair_data(
+            ManagedOption::none(),
+            ManagedOption::some(ms),
+            ManagedOption::some(fe),
+        )
+        .set(pair_data);
     }
 
     fn validate_sc(&self, sc_address: &ManagedAddress) {

@@ -1,3 +1,6 @@
+#![no_std]
+
+use core::clone::Clone;
 use multiversx_sc::{
     api::{CryptoApi, CryptoApiImpl, SHA256_RESULT_LEN},
     codec::TopEncode,
