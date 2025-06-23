@@ -6,9 +6,9 @@
 
 // Init:                                 1
 // Upgrade:                              1
-// Endpoints:                           10
+// Endpoints:                           13
 // Async Callback (empty):               1
-// Total number of exported functions:  13
+// Total number of exported functions:  16
 
 #![no_std]
 
@@ -23,6 +23,9 @@ multiversx_sc_wasm_adapter::endpoints! {
         register_fe_to_sc => register_fe_to_sc
         register_ms_to_sc => register_ms_to_sc
         register_fe_to_ms => register_fe_to_ms
+        submit_ms_interface_specs => submit_ms_interface_specs
+        submit_fe_interface_specs => submit_fe_interface_specs
+        submit_sc_interface_specs => submit_sc_interface_specs
         pairs_fe_to_sc => pairs_fe_to_sc
         pairs_ms_to_sc => pairs_ms_to_sc
         pairs_fe_to_ms => pairs_fe_to_ms

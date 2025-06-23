@@ -248,6 +248,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "decode-hash"
+version = "0.0.0"
+dependencies = [
+ "multiversx-sc",
+]
+
+[[package]]
 name = "der"
 version = "0.7.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -320,6 +327,13 @@ name = "foldhash"
 version = "0.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d9c4f5dac5e15c24eb999c26181a6ca40b39fe946cbe4c263c7209467bc83af2"
+
+[[package]]
+name = "generate-hash"
+version = "0.0.0"
+dependencies = [
+ "multiversx-sc",
+]
 
 [[package]]
 name = "generic-array"
@@ -761,6 +775,8 @@ dependencies = [
 name = "registry-sc"
 version = "0.0.0"
 dependencies = [
+ "decode-hash",
+ "generate-hash",
  "multiversx-sc",
  "multiversx-sc-scenario",
  "num-bigint",

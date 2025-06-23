@@ -1,3 +1,5 @@
+use decode_hash::DecodeHash;
+use multiversx_sc::api::CryptoApi;
 use multiversx_sc::derive_imports::*;
 use multiversx_sc::imports::*;
 
@@ -38,3 +40,5 @@ where
     pub version: ManagedBuffer<M>,
     pub endpoints: ManagedVec<M, Endpoint<M>>,
 }
+
+impl<A: CryptoApi> DecodeHash<A> for ScSpecs<A> {}

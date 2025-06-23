@@ -11,6 +11,12 @@ path = "src/registry_sc.rs"
 [dependencies.multiversx-sc]
 version = "0.58.0"
 
+[dependencies.generate-hash]
+path = "../common/generate-hash"
+
+[dependencies.decode-hash]
+path = "../common/decode-hash"
+
 [dev-dependencies]
 num-bigint = "0.4"
 

@@ -1,0 +1,12 @@
+[package]
+name = "generate-hash"
+version = "0.0.0"
+publish = false
+edition = "2021"
+authors = ["you"]
+
+[lib]
+path = "src/lib.rs"
+
+[dependencies.multiversx-sc]
+version = "0.58.0"

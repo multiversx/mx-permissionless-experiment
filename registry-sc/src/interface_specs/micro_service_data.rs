@@ -1,3 +1,5 @@
+use decode_hash::DecodeHash;
+use multiversx_sc::api::CryptoApi;
 use multiversx_sc::derive_imports::*;
 use multiversx_sc::imports::*;
 
@@ -24,8 +26,9 @@ pub struct MsSpecs<M>
 where
     M: ManagedTypeApi,
 {
-    pub hash: MicroService<M>,
+    pub hash: ManagedBuffer<M>,
     pub name: ManagedBuffer<M>,
     pub version: ManagedBuffer<M>,
     pub interfaces: ManagedVec<M, MsInterface<M>>,
 }
+impl<A: CryptoApi> DecodeHash<A> for MsSpecs<A> {}
