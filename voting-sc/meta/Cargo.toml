@@ -1,10 +1,10 @@
 [package]
-name = "social-registry-contract-meta"
+name = "voting-sc-meta"
 version = "0.0.0"
 edition = "2021"
 publish = false
 
-[dependencies.social-registry-contract]
+[dependencies.voting-sc]
 path = ".."
 
 [dependencies.multiversx-sc-meta-lib]

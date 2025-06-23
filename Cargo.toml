@@ -4,9 +4,10 @@ resolver = "2"
 members = [
     "adder",
     "adder/meta",
-    "adder/interactor",
     "registry-sc",
     "registry-sc/meta",
     "social-registry-contract",
     "social-registry-contract/meta",
+    "voting-sc",
+    "voting-sc/meta",
 ]

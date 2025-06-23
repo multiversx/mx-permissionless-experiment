@@ -1,0 +1,5 @@
+[[proxy]]
+path = "../registry-sc/src/src_proxy.rs"
+
+[[proxy]]
+path = "../voting-sc/src/src_proxy.rs"

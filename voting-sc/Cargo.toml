@@ -1,21 +1,15 @@
 [package]
-name = "registry-sc"
+name = "voting-sc"
 version = "0.0.0"
 publish = false
 edition = "2021"
 authors = ["you"]
 
 [lib]
-path = "src/registry_sc.rs"
+path = "src/voting_sc.rs"
 
 [dependencies.multiversx-sc]
 version = "0.58.0"
-
-[dependencies.generate-hash]
-path = "../common/generate-hash"
-
-[dependencies.decode-hash]
-path = "../common/decode-hash"
 
 [dev-dependencies]
 num-bigint = "0.4"
